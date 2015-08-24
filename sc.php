@@ -62,7 +62,7 @@ function readCache($cacheTimeout, $cacheOn) {
 	}
 }
 function online($server, $port) {
-	@socket = fsockopen($server, $port, $errno, $errstr, 1);
+	$socket = fsockopen($server, $port, $errno, $errstr, 1);
 	if(!$socket) { return false; } else { return true; }
 }
 if($_GET['ajaxsync'] == "get-shoutcast-update" && readCache($cacheTime, $cacheOn)) {
